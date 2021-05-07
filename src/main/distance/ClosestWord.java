@@ -4,23 +4,21 @@ public class ClosestWord {
 
     public static void printMatrix (int[][] matrix, String string1, String string2) {
         String printString;
+        final String gridSpace = "%3s";
         System.out.println();
-        System.out.print("    ");
-        for (int i = 1; i <= string1.length(); i++ ) {
-            System.out.print(string1.charAt(i - 1));
+        System.out.printf(gridSpace, "");
+        System.out.printf(gridSpace, "");
 
-            if (i != string1.length()) {
-                System.out.print(" ");
-            }
+        for (int i = 1; i <= string1.length(); i++ ) {
+            System.out.printf(gridSpace, string1.charAt(i - 1));
         }
         System.out.println();
         for (int j = 0; j < string2.length() + 1; j++) {
-            printString = (j == 0) ? "  " : string2.charAt(j - 1) + " ";
-            System.out.print(printString);
+            printString = (j == 0) ? " " : string2.charAt(j - 1) + "";
+            System.out.printf(gridSpace, printString);
             for (int i = 0; i < matrix.length; i++) {
                 printString = String.valueOf(matrix[i][j]);
-                printString += (i == matrix.length - 1) ? "" : " ";
-                System.out.print(printString);
+                System.out.printf(gridSpace, printString);
             }
             System.out.println();
         }
