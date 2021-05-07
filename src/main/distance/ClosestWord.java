@@ -1,4 +1,4 @@
-package distance;
+package main.distance;
 
 public class ClosestWord {
 
